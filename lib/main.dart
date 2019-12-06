@@ -1,3 +1,4 @@
+import 'package:design_patterns/pages/CategoryPage.dart';
 import 'package:design_patterns/pages/MainMenu.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,13 @@ class MyApp extends StatelessWidget {
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case '/category':
+      return MaterialPageRoute(
+        builder: (_) => CategoryPage(
+          category: settings.arguments,
+        ),
+      );
+      break;
     case '/':
     default:
       return MaterialPageRoute(builder: (_) => MainMenu());
