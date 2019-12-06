@@ -38,11 +38,18 @@ class MainMenuCard extends StatelessWidget {
           ),
     );
 
+    var onSelectionCardTap = () => Navigator.pushNamed(
+          context,
+          '/category',
+          arguments: category,
+        );
+
     return SelectionCard(
       backgroundColor: Color(int.parse(category['color'])),
       backgroundHeroTag: "${category['id']}_background",
       contentHeader: contentHeader,
       contentText: contentText,
+      onTap: onSelectionCardTap,
     );
   }
 }

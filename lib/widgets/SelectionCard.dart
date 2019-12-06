@@ -6,9 +6,10 @@ class SelectionCard extends StatelessWidget {
   final String backgroundHeroTag;
   final Text contentHeader;
   final Text contentText;
+  final VoidCallback onTap;
 
-  final double selectionCardWidth = 200.0;
-  final double selectionCardHeight = 120.0;
+  final double selectionCardWidth = 400.0;
+  final double selectionCardHeight = 240.0;
   final double selectionCardBorderRadius = 10.0;
 
   const SelectionCard({
@@ -16,6 +17,7 @@ class SelectionCard extends StatelessWidget {
     @required this.backgroundHeroTag,
     @required this.contentHeader,
     @required this.contentText,
+    @required this.onTap,
     Key key,
   })  : assert(backgroundColor != null),
         assert(backgroundHeroTag != null),
@@ -55,15 +57,17 @@ class SelectionCard extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(paddingL),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   contentHeader,
                   contentText,
                 ],
               ),
+              width: selectionCardWidth,
               height: selectionCardHeight,
             ),
+            onTap: onTap,
           ),
         ),
       ],
