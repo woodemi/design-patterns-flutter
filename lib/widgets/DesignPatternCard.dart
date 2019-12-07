@@ -28,7 +28,11 @@ class DesignPatternCard extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: 2,
     );
-    var onSelectionCardTap = () {};
+    var onSelectionCardTap = () => Navigator.pushNamed(
+          context,
+          designPattern['route'],
+          arguments: designPattern,
+        );
 
     return SelectionCard(
       backgroundColor: lightBackgroundColor,
